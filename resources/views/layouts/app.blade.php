@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/my_style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -69,6 +70,12 @@
                                     </form>
                                 </div>
                             </li>
+
+                            <li>
+
+                                <a href={{ url('contacts/create') }}><button class="btn btn-success">ADD CONTACT</button></a>
+                                
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -76,7 +83,35 @@
         </nav>
 
         <main class="py-4">
+
+            
+
+
+
             <div class="container">
+
+                {{-- DEBUG MESSAGE------------------- --}}
+                @if (session()->has('message'))
+                <div class=""  id='hideMe'>
+                    <p class="delete">
+                        {{ session()->get('message') }}
+                    </p>
+                </div>
+                @endif
+                    {{-- DEBUG ERRORS FORM-------------------- --}}
+                @if ($errors->any())
+                <div class="">
+                    <ul>
+                        @foreach ($errors->all() as $erro)
+                            <li class="">
+                                {{ $erro }}                   
+                            </li>                 
+                        @endforeach
+                    </ul>
+                </div>       
+                @endif 
+
+
                 @yield('content')
             </div>
         </main>

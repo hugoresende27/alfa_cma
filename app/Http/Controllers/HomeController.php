@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $contacts = Contact::all();
+        return view ('welcome', compact('contacts'));
     }
 }

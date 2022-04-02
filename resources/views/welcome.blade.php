@@ -8,34 +8,49 @@
 
 <h1> Contact Management Web application</h1>
 
+
+
+
 <table class="table table-dark">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Name</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Email</th>
+        <th scope="col">EDIT</th>
+        <th scope="col">DELETE</th>
       </tr>
     </thead>
     <tbody>
+
+    @foreach ($contacts as $contact)        
+
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>{{ $contact->id }}</td>
+        <td>{{ $contact->name }}</td>
+        <td>{{ $contact->contact_nr }}</td>
+        <td>{{ $contact->email }}</td>
+        <td><a href="/contacts/{{ $contact->id }}/edit">Edit </a></td>
+
+        <td>
+                
+            <form action="/contacts/{{ $contact->id  }}" method="POST">
+                @csrf
+                @method('delete')
+                <button type="submit"
+                        class="border-b-2  border-dotted italic text-black"
+                        onclick="return confirm('Are you sure?')" 
+                        > Delete </button>
+
+            </form>
+
+        </td>
+      
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+
+    @endforeach
+      
     </tbody>
   </table>
 
