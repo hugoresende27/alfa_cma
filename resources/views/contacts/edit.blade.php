@@ -6,15 +6,17 @@
 @section('content')
 
 
-<h1> Edit a contact</h1>
+
 
 <div>
 @foreach ($contact as $item)
     
 
 
-<form action="{{ url('contacts') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('contacts').'/'.$item->id }}" method="POST" enctype="multipart/form-data" class="myform">
+    <h1> Edit a contact</h1>
     @csrf
+    @method('PUT')
        
         
         <div class="form-group">   
@@ -34,7 +36,7 @@
     
     
                 
-                <button type="submit" class="">Submit</button>
+                <button type="submit" class="btn btn-primary m-3">Submit</button>
                 
         </div>
     
