@@ -25,6 +25,13 @@ body{
     margin-left: 20%;
 }
 
+.msg{
+    background-color: #fff;
+    border-radius: 5px;
+    width: fit-content;
+    
+}
+
 /*///////////////////////////////HIDE ME //////////////////////////////////////*/
 
 #hideMe {

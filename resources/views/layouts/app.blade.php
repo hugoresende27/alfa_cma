@@ -88,11 +88,11 @@
 
 
 
-            <div class="container">
+            <div class="container ">
 
                 {{-- DEBUG MESSAGE------------------- --}}
                 @if (session()->has('message'))
-                <div class=""  id='hideMe'>
+                <div class="msg"  id='hideMe'>
                     <p class="delete">
                         {{ session()->get('message') }}
                     </p>
@@ -100,7 +100,7 @@
                 @endif
                     {{-- DEBUG ERRORS FORM-------------------- --}}
                 @if ($errors->any())
-                <div class="">
+                <div class="msg">
                     <ul>
                         @foreach ($errors->all() as $erro)
                             <li class="">
