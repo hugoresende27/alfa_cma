@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('contact_nr');
-            $table->string('email')->unique();        
+            $table->string('email');        
             $table->timestamps();
             $table->softDeletes();
         });

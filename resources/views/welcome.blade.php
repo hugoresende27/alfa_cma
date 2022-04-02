@@ -18,8 +18,12 @@
         <th scope="col">Name</th>
         <th scope="col">Contact</th>
         <th scope="col">Email</th>
-        <th scope="col">EDIT</th>
-        <th scope="col">DELETE</th>
+        @auth
+              
+            <th scope="col">EDIT</th>
+            <th scope="col">DELETE</th>
+
+        @endauth
       </tr>
     </thead>
     <tbody>
@@ -28,24 +32,30 @@
 
       <tr>
         <td>{{ $contact->id }}</td>
-        <td>{{ $contact->name }}</td>
+        <td> <a href="/contacts/{{ $contact->id }}"> {{ $contact->name }} </a> </td>
         <td>{{ $contact->contact_nr }}</td>
         <td>{{ $contact->email }}</td>
-        <td><a href="/contacts/{{ $contact->id }}/edit">Edit </a></td>
 
-        <td>
-                
-            <form action="/contacts/{{ $contact->id  }}" method="POST">
-                @csrf
-                @method('delete')
-                <button type="submit"
-                        class="border-b-2  border-dotted italic text-black"
-                        onclick="return confirm('Are you sure?')" 
-                        > Delete </button>
+        @auth
+            
+            
+            <td><a href="/contacts/{{ $contact->id }}/edit">Edit </a></td>
 
-            </form>
+            <td>
+                    
+                <form action="/contacts/{{ $contact->id  }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit"
+                            class="border-b-2  border-dotted italic text-black"
+                            onclick="return confirm('Are you sure?')" 
+                            > Delete </button>
 
-        </td>
+                </form>
+
+            </td>
+
+        @endauth
       
       </tr>
 

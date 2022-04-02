@@ -66,7 +66,7 @@ class ContactController extends Controller
            
         ]);
 
-        return redirect ('/');
+        return redirect ('/')->with('message', 'Contact Created');
     }
 
     /**
@@ -77,7 +77,9 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $contact = Contact::where('id',$id)->get();
+        return view ('contacts.show', compact('contact'));
     }
 
     /**
@@ -88,7 +90,8 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contact = Contact::where('id',$id)->get();
+        return view ('contacts.edit', compact('contact'));
     }
 
     /**
@@ -100,7 +103,29 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $fields = $request->validate([
+            
+            'name'=>'required|string|min:5',
+            'contact_nr'=>'required|integer|min:9',
+            'email'=>'required|string|email',
+                            
+        ],
+        [
+            'name'=>'5 chars minimum',
+            'contact_nr'=>'9 digits minimum',
+            'email'=>'Invalid Email',
+        ]);
+
+          
+        $contact = Contact::where('id',$id)->update([
+            'name'=>$fields['name'],
+            'contact_nr'=>$fields['contact_nr'],
+            'email'=>$fields['email'],
+           
+        ]);
+
+        return redirect ('/')->with('message', 'Record Updated');
     }
 
     /**
