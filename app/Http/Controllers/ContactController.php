@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreContactRequest;
 
 class ContactController extends Controller
 {
@@ -43,21 +44,11 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    
+    public function store(StoreContactRequest $request)
     {
-        $fields = $request->validate([
-            
-            'name'=>'required|string|min:5',
-            'contact_nr'=>'required|integer|min:9',
-            'email'=>'required|string|email',
-                            
-        ],
-        [
-            'name'=>'5 chars minimum',
-            'contact_nr'=>'9 digits minimum',
-            'email'=>'Invalid Email',
-        ]);
-
+ 
+        $fields = $request->validated();
           
         $contact = Contact::create([
             'name'=>$fields['name'],
@@ -101,22 +92,10 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        
-        $fields = $request->validate([
-            
-            'name'=>'required|string|min:5',
-            'contact_nr'=>'required|integer|min:9',
-            'email'=>'required|string|email',
-                            
-        ],
-        [
-            'name'=>'5 chars minimum',
-            'contact_nr'=>'9 digits minimum',
-            'email'=>'Invalid Email',
-        ]);
-
+    public function update(StoreContactRequest $request , $id)
+    {    
+       
+        $fields = $request->validated();
           
         $contact = Contact::where('id',$id)->update([
             'name'=>$fields['name'],

@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     {{-- <script src="{{ url('js/app.js') }}" defer></script> --}}
-    <script src="../js/app.js" defer></script>
+    <script src="/js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,8 +20,8 @@
     <!-- Styles -->
     {{-- <link href="{{ url('css/app.css') }}" rel="stylesheet">
     <link href="{{ url('css/my_style.css') }}" rel="stylesheet"> --}}
-    <link href=" ../css/app.css " rel="stylesheet">
-    <link href="../css/my_style.css" rel="stylesheet">
+    <link href=" /css/app.css " rel="stylesheet">
+    <link href="/css/my_style.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -58,7 +58,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                   Welcome {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
