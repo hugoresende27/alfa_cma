@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     {{-- <script src="{{ url('js/app.js') }}" defer></script> --}}
-    <script src="js/app.js" defer></script>
+    <script src="../js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,8 +20,8 @@
     <!-- Styles -->
     {{-- <link href="{{ url('css/app.css') }}" rel="stylesheet">
     <link href="{{ url('css/my_style.css') }}" rel="stylesheet"> --}}
-    <link href=" css/app.css " rel="stylesheet">
-    <link href="css/my_style.css" rel="stylesheet">
+    <link href=" ../css/app.css " rel="stylesheet">
+    <link href="../css/my_style.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -116,6 +116,11 @@
 
 
                 @yield('content')
+
+                <div class="fixed-bottom">
+                    @include('layouts.footer')
+                </div>
+                
             </div>
         </main>
     </div>

@@ -3,7 +3,7 @@
 
 body{
     background: rgb(1,36,0);
-    background: linear-gradient(90deg, rgba(1,36,0,1) 0%, rgba(41,121,9,1) 43%, rgba(10,255,0,0.9559174011401436) 100%);  
+    background: linear-gradient(90deg, rgba(1,36,0,1) 0%, rgb(131, 139, 128) 43%rgba(58, 65, 58, 0.956)6) 100%);  
     font-family: 'Roboto', sans-serif;
 }
 
@@ -30,6 +30,47 @@ body{
     border-radius: 5px;
     width: fit-content;
     
+}
+
+footer{
+    padding: 0.5rem;
+    text-align: center;
+    color:#fff;
+    /* position: relative; */
+    /* position: absolute; */
+    /* bottom: 0rem;  */
+    /* left: 50%;  */
+    /* transform: translateX(-50%); */
+    clear: both;
+    position: relative;
+    /* height: 200px; */
+    /* margin-top: -200px; */
+
+}
+
+footer:hover{
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    /* transform:  scale(1.1);  */
+}
+footer:hover a{
+    color: yellow;
+    font-weight: 700;
+}
+footer:hover a:hover{
+    font-weight: 900;
+    color:greenyellow;
+}
+
+footer a{
+   color: #fff;  /*cor dos links a preto*/
+   text-decoration: none;     /*retira o sublinhado dos links*/
+  
+}
+
+footer a:hover{
+    color: var(--gold-cor);
 }
 
 /*///////////////////////////////HIDE ME //////////////////////////////////////*/
