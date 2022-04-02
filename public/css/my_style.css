@@ -5,6 +5,8 @@ body{
     background: rgb(1,36,0);
     background: linear-gradient(90deg, rgb(65, 68, 65) 0%, rgb(72, 73, 71) 43%, rgba(73, 76, 73, 0.956) 100%);  
     font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+
 }
 
 .mynav{
@@ -14,37 +16,48 @@ body{
     font-weight: bolder;
 }
 .myform{
-    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 1.3rem;
     background-color: grey;
     padding: 5px;
     border-radius: 5px;
     max-width: 400px;
 }
 
-.myform label,input{
-    margin-left: 20%;
+.mycenter{
+    align-content: center; 
+    display: flex;          
+    flex-direction: column; 
+    align-items: center;     
+    background-repeat: no-repeat; 
+    height: 100%;
 }
 
 .msg{
     background-color: #fff;
-    border-radius: 5px;
-    width: fit-content;
-    
+    border-radius: 5px; 
+   width: fit-content; 
+   /* position: absolute; */
+   left: 50%;
+   transform: translateX(-50%);
 }
+
+.msg li{
+    list-style: none;
+}
+
+
+
+
+/*///////////////MY FOOTER////////////*/
 
 footer{
     padding: 0.5rem;
     text-align: center;
     color:#fff;
-    /* position: relative; */
-    /* position: absolute; */
-    /* bottom: 0rem;  */
-    /* left: 50%;  */
-    /* transform: translateX(-50%); */
     clear: both;
     position: relative;
-    /* height: 200px; */
-    /* margin-top: -200px; */
 
 }
 
@@ -52,7 +65,7 @@ footer:hover{
     background-color: #333;
     color: #fff;
     border-radius: 10px;
-    /* transform:  scale(1.1);  */
+  
 }
 footer:hover a{
     color: yellow;

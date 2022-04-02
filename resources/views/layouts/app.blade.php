@@ -91,7 +91,7 @@
 
 
 
-            <div class="container ">
+            <div class="container">
 
                 {{-- DEBUG MESSAGE------------------- --}}
                 @if (session()->has('message'))
@@ -114,8 +114,9 @@
                 </div>       
                 @endif 
 
-
-                @yield('content')
+                <div class="mycenter">
+                    @yield('content')
+                </div>
 
                 <div class="fixed-bottom">
                     @include('layouts.footer')

@@ -25,15 +25,10 @@ class StoreContactRequest extends FormRequest
     {
         return [
             'name'=>['required','string','min:5'],
-            'contact_nr'=>['required','integer','min:9'],
+            'contact_nr'=>['required','integer','digits_between:9,12'],
             'email'=>['required','string','email']
                             
         ];
-        // ,
-        // [
-        //     'name'=>'5 chars minimum',
-        //     'contact_nr'=>'9 digits minimum',
-        //     'email'=>'Invalid Email',
-        // ];
+      
     }
 }
