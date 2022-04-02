@@ -1,4 +1,18 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body{
+    background: rgb(1,36,0);
+    background: linear-gradient(90deg, rgba(1,36,0,1) 0%, rgba(41,121,9,1) 43%, rgba(10,255,0,0.9559174011401436) 100%);  
+    font-family: 'Roboto', sans-serif;
+}
+
+.mynav{
+    background: rgb(47,51,47);
+    background: linear-gradient(90deg, rgba(47,51,47,1) 0%, rgba(177,185,173,1) 43%, rgba(194,201,194,0.9559174011401436) 100%);
+    font-size: large;
+    font-weight: bolder;
+}
 
 /*///////////////////////////////HIDE ME //////////////////////////////////////*/
 

@@ -6,7 +6,7 @@
 @section('content')
 
 
-<h1> Contact Management Web application</h1>
+<h1 class="text-white"> Contact Management Web application</h1>
 
 
 
