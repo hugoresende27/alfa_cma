@@ -35,18 +35,18 @@ body{
 }
 
 .msg{
-    background-color: #fff;
-    border-radius: 5px; 
+   background-color: #fff;
+   border-radius: 5px; 
    width: fit-content; 
-   /* position: absolute; */
-   left: 50%;
+   padding: 0 5px;
+   margin-left: 50%;
    transform: translateX(-50%);
+
 }
 
 .msg li{
     list-style: none;
 }
-
 
 
 
@@ -77,8 +77,8 @@ footer:hover a:hover{
 }
 
 footer a{
-   color: #fff;  /*cor dos links a preto*/
-   text-decoration: none;     /*retira o sublinhado dos links*/
+   color: #fff;  
+   text-decoration: none;     
   
 }
 
